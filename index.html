@@ -1,993 +1,534 @@
 
-
 <!DOCTYPE html>
-
 <html lang="id">
-
 <head>
-
   <meta charset="UTF-8">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <meta name="theme-color" content="#f8f5ef">
-
-  <meta name="description" content="Ramaiin — undangan digital pernikahan yang elegan, personal, dan mudah dibagikan.">
-
-  <title>Ramaiin. | Undangan Digital</title>
+  <meta name="theme-color" content="#f8f5f0">
+  <meta name="description" content="Ramaiin — undangan digital elegan untuk hari istimewa kamu.">
+  <title>Ramaiin — Ceritakan Hari Istimewamu</title>
 
   <style>
-
     :root {
-
-      --ivory: #f8f5ef;
-
-      --beige: #dccdbb;
-
-      --soft: #eee8df;
-
-      --taupe: #8b7965;
-
-      --ink: #292820;
-
-      --line: #ded7ce;
-
-      --white: #fffdfa;
-
+      --cream: #f8f5f0;
+      --paper: #fffdf9;
+      --brown: #59483d;
+      --muted: #88786d;
+      --line: #e7ded4;
+      --green: #536b59;
     }
 
-    * {
-
-      box-sizing: border-box;
-
-      margin: 0;
-
-      padding: 0;
-
-    }
+    * { box-sizing: border-box; }
 
     html {
-
       scroll-behavior: smooth;
-
-      scroll-padding-top: 80px;
-
+      scroll-padding-top: 85px;
     }
 
     body {
-
-      background: var(--ivory);
-
-      color: var(--ink);
-
+      margin: 0;
+      background: var(--paper);
+      color: var(--brown);
       font-family: Arial, Helvetica, sans-serif;
-
       line-height: 1.7;
-
     }
 
-    a {
-
-      color: inherit;
-
-      text-decoration: none;
-
-    }
-
-    button, a {
-
-      -webkit-tap-highlight-color: transparent;
-
-    }
+    a { color: inherit; text-decoration: none; }
 
     .container {
-
-      width: min(1120px, 86%);
-
+      width: min(1100px, 90%);
       margin: auto;
-
     }
 
     header {
-
-      background: var(--beige);
-
-      border-bottom: 1px solid rgba(41,40,32,.08);
-
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255,253,249,.95);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(12px);
     }
 
-    nav {
-
-      min-height: 66px;
-
+    .nav {
+      min-height: 74px;
       display: flex;
-
       align-items: center;
-
       justify-content: space-between;
-
-      gap: 24px;
-
+      gap: 20px;
     }
 
     .logo {
-
       font-family: Georgia, serif;
-
-      font-size: 23px;
-
-      letter-spacing: -1px;
-
-      font-weight: bold;
-
+      font-size: 29px;
+      letter-spacing: 1px;
+      font-weight: normal;
     }
 
     .nav-links {
-
       display: flex;
-
       align-items: center;
-
-      gap: 28px;
-
+      gap: 25px;
       font-size: 13px;
-
     }
 
-    .nav-links a:hover,
-
-    footer a:hover {
-
-      color: var(--taupe);
-
-    }
+    .nav-links a:hover { color: var(--green); }
 
     .button {
-
-      display: inline-block;
-
-      padding: 12px 20px;
-
-      background: var(--ink);
-
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      min-height: 48px;
+      padding: 12px 23px;
+      border: 1px solid var(--brown);
+      border-radius: 3px;
+      background: var(--brown);
       color: white;
-
-      border: 1px solid var(--ink);
-
       font-size: 13px;
-
-      font-weight: bold;
-
       transition: .2s ease;
-
+      cursor: pointer;
     }
 
     .button:hover {
-
-      background: var(--taupe);
-
-      border-color: var(--taupe);
-
+      background: #403229;
+      transform: translateY(-2px);
     }
 
     .button-outline {
-
       background: transparent;
-
-      color: var(--ink);
-
-      border-color: var(--line);
-
+      color: var(--brown);
     }
 
     .button-outline:hover {
-
+      background: var(--brown);
       color: white;
-
     }
 
     .hero {
+      padding: 90px 0 80px;
+      background:
+        radial-gradient(ellipse at 85% 15%, #e9dfd2 0, transparent 35%),
+        var(--cream);
+    }
 
+    .hero-grid {
       display: grid;
-
-      grid-template-columns: 1.1fr .9fr;
-
+      grid-template-columns: 1.05fr .95fr;
       align-items: center;
-
-      gap: 75px;
-
-      padding-top: 90px;
-
-      padding-bottom: 90px;
-
+      gap: 65px;
     }
 
     .eyebrow {
-
-      color: var(--taupe);
-
       font-size: 11px;
-
-      font-weight: bold;
-
       letter-spacing: 3px;
-
       text-transform: uppercase;
-
-      margin-bottom: 18px;
-
+      color: var(--muted);
     }
 
-    h1, h2, h3 {
+    h1, h2, h3, p { margin-top: 0; }
 
+    h1, h2, .serif {
       font-family: Georgia, "Times New Roman", serif;
-
       font-weight: normal;
-
-      line-height: 1.25;
-
     }
 
     h1 {
+      font-size: clamp(42px, 6vw, 69px);
+      line-height: 1.12;
+      letter-spacing: -2px;
+      margin: 20px 0;
+    }
 
-      font-size: clamp(34px, 4vw, 52px);
-
-      letter-spacing: -1.5px;
-
-      margin-bottom: 22px;
-
+    h1 em, h2 em {
+      color: var(--green);
+      font-weight: normal;
     }
 
     .hero-copy {
-
       max-width: 470px;
-
-      font-size: 14px;
-
-      color: #625d54;
-
-      margin-bottom: 27px;
-
+      color: var(--muted);
+      font-size: 15px;
+      margin-bottom: 28px;
     }
 
-    .hero-buttons {
-
+    .hero-actions {
       display: flex;
-
       flex-wrap: wrap;
-
-      gap: 10px;
-
+      gap: 12px;
     }
 
-    .hero-visual {
-
-      position: relative;
-
-      max-width: 400px;
-
-      width: 100%;
-
-      justify-self: center;
-
-      padding: 22px;
-
-      background: var(--beige);
-
+    .hero-art {
+      min-height: 410px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 30px;
     }
 
     .invitation {
-
-      background: var(--ivory);
-
-      padding: 12px 12px 24px;
-
-      text-align: center;
-
-      box-shadow: 0 12px 30px rgba(41,40,32,.08);
-
-    }
-
-    .invitation img {
-
-      display: block;
-
-      width: 100%;
-
-      aspect-ratio: 3 / 3.5;
-
-      object-fit: cover;
-
-      object-position: center;
-
-      margin-bottom: 17px;
-
-    }
-
-    .invitation-label {
-
-      color: var(--taupe);
-
-      font-size: 10px;
-
-      letter-spacing: 4px;
-
-    }
-
-    .invitation h2 {
-
-      font-size: 24px;
-
-      margin-top: 7px;
-
-    }
-
-    .invitation p {
-
-      font-family: Georgia, serif;
-
-      font-size: 13px;
-
-      margin-top: 5px;
-
-    }
-
-    .section {
-
-      padding: 85px 0;
-
-    }
-
-    .collection {
-
-      background: var(--soft);
-
-    }
-
-    .section-title {
-
-      font-size: 31px;
-
-      margin-bottom: 35px;
-
-    }
-
-    .cards {
-
-      display: grid;
-
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-
-      gap: 22px;
-
-    }
-
-    .card {
-
-      background: var(--ivory);
-
-      border: 1px solid var(--line);
-
-      transition: transform .2s ease;
-
-    }
-
-    .card:hover {
-
-      transform: translateY(-4px);
-
-    }
-
-    .card img {
-
-      width: 100%;
-
-      display: block;
-
-      aspect-ratio: 4 / 3;
-
-      object-fit: cover;
-
-    }
-
-    .card-content {
-
+      position: relative;
+      width: min(320px, 100%);
+      min-height: 390px;
       padding: 20px;
-
+      background: #e8ded0;
+      box-shadow: 0 20px 55px #59483d18;
+      transform: rotate(2deg);
     }
 
-    .card-number {
-
-      font-size: 10px;
-
-      letter-spacing: 2px;
-
-      color: var(--taupe);
-
-      margin-bottom: 8px;
-
-    }
-
-    .card h3 {
-
-      font-size: 22px;
-
-      margin-bottom: 18px;
-
-    }
-
-    .card-link {
-
-      border-top: 1px solid var(--line);
-
-      padding-top: 14px;
-
-      font-size: 12px;
-
-      font-weight: bold;
-
+    .invitation-inner {
+      min-height: 350px;
+      height: 100%;
+      padding: 35px 20px;
+      border: 1px solid #b5a18c;
       display: flex;
-
-      justify-content: space-between;
-
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background:
+        linear-gradient(#f9f5eeed, #f9f5eeed),
+        repeating-linear-gradient(45deg, #ddd0c0 0 1px, transparent 1px 8px);
     }
 
-    .steps {
-
-      display: grid;
-
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-
-      gap: 40px;
-
+    .invitation .small {
+      font-size: 9px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
     }
 
-    .step {
-
-      border-top: 1px solid var(--line);
-
-      padding-top: 22px;
-
+    .invitation .names {
+      font-family: Georgia, serif;
+      font-size: 37px;
+      line-height: 1.2;
+      margin: 22px 0;
     }
 
-    .step-icon {
+    .invitation .amp { color: var(--green); font-style: italic; }
 
-      color: var(--taupe);
-
-      font-size: 25px;
-
-      margin-bottom: 15px;
-
-    }
-
-    .step-number {
-
-      color: var(--taupe);
-
-      font-size: 11px;
-
+    .invitation .date {
+      margin-top: 20px;
+      padding-top: 16px;
+      border-top: 1px solid #cbb9a6;
+      font-size: 10px;
       letter-spacing: 2px;
-
     }
 
-    .step h3 {
+    .section { padding: 85px 0; }
 
-      font-size: 22px;
-
-      margin: 7px 0;
-
+    .section-heading {
+      max-width: 600px;
+      margin: 0 auto 42px;
+      text-align: center;
     }
 
-    .step p {
-
-      font-size: 13px;
-
-      color: #625d54;
-
+    .section-heading h2 {
+      font-size: clamp(32px, 4vw, 45px);
+      line-height: 1.2;
+      margin: 12px 0;
     }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .feature {
+      padding: 27px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+    }
+
+    .feature-number {
+      font-family: Georgia, serif;
+      font-size: 30px;
+      color: #a18b76;
+    }
+
+    .feature h3 { margin: 13px 0 8px; font-size: 16px; }
+    .feature p { color: var(--muted); font-size: 13px; margin-bottom: 0; }
+
+    .collection { background: var(--cream); }
+
+    .template-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .template-card {
+      overflow: hidden;
+      background: var(--paper);
+      border: 1px solid var(--line);
+    }
+
+    .template-preview {
+      min-height: 265px;
+      padding: 20px;
+      background: #e9dfd3;
+    }
+
+    .template-preview.sage { background: #dce1d5; }
+    .template-preview.rose { background: #eadbd8; }
+
+    .mini-card {
+      min-height: 225px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      border: 1px solid #b7a591;
+      padding: 22px 10px;
+      color: #59483d;
+      background: #fbf8f1;
+    }
+
+    .mini-card .mini-label {
+      font-size: 8px;
+      letter-spacing: 2px;
+    }
+
+    .mini-card .mini-names {
+      font-family: Georgia, serif;
+      font-size: 30px;
+      line-height: 1.2;
+      margin: 18px 0;
+    }
+
+    .mini-card .mini-date {
+      font-size: 9px;
+      letter-spacing: 1px;
+    }
+
+    .template-info { padding: 20px; }
+    .template-info h3 { margin-bottom: 5px; font-family: Georgia, serif; font-size: 23px; font-weight: normal; }
+    .template-info p { font-size: 13px; color: var(--muted); margin-bottom: 18px; }
+    .template-info .button { width: 100%; }
 
     .cta {
-
-      background: var(--beige);
-
-      padding: 48px 0;
-
-    }
-
-    .cta-inner {
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: space-between;
-
-      gap: 25px;
-
+      padding: 80px 0;
+      background: #e9e0d5;
+      text-align: center;
     }
 
     .cta h2 {
+      font-size: clamp(34px, 5vw, 49px);
+      margin: 12px auto 16px;
+    }
 
-      font-size: 27px;
-
+    .cta p {
+      color: var(--muted);
+      max-width: 520px;
+      margin: 0 auto 26px;
+      font-size: 14px;
     }
 
     footer {
-
-      padding: 40px 0 25px;
-
+      padding: 30px 0;
+      background: var(--paper);
     }
 
-    .footer-top {
-
+    .footer-inner {
       display: flex;
-
-      align-items: flex-start;
-
       justify-content: space-between;
-
-      gap: 30px;
-
-      padding-bottom: 28px;
-
-    }
-
-    .footer-tagline {
-
-      margin-top: 10px;
-
-      font-size: 13px;
-
-    }
-
-    .footer-links {
-
-      display: flex;
-
+      align-items: center;
+      gap: 20px;
       flex-wrap: wrap;
-
-      gap: 22px;
-
-      font-size: 12px;
-
     }
 
-    .footer-bottom {
-
-      border-top: 1px solid var(--line);
-
-      padding-top: 20px;
-
-      display: flex;
-
-      gap: 22px;
-
-      font-size: 12px;
-
-      text-decoration: underline;
-
-    }
+    .footer-note { font-size: 12px; color: var(--muted); }
+    .social-links { display: flex; gap: 20px; font-size: 13px; }
+    .social-links a:hover { color: var(--green); }
 
     @media (max-width: 760px) {
-
-      .container {
-
-        width: 90%;
-
-      }
-
-      nav {
-
-        min-height: 65px;
-
-      }
-
-      .nav-links {
-
-        gap: 14px;
-
-        font-size: 11px;
-
-      }
-
-      .nav-links .nav-contact {
-
-        display: none;
-
-      }
-
-      .hero {
-
-        grid-template-columns: 1fr;
-
-        gap: 42px;
-
-        padding-top: 65px;
-
-        padding-bottom: 65px;
-
-      }
-
-      h1 {
-
-        font-size: 38px;
-
-      }
-
-      .hero-visual {
-
-        max-width: 360px;
-
-      }
-
-      .section {
-
-        padding: 65px 0;
-
-      }
-
-      .cards {
-
-        grid-template-columns: 1fr;
-
-        gap: 22px;
-
-      }
-
-      .card img {
-
-        aspect-ratio: 16 / 9;
-
-      }
-
-      .steps {
-
-        grid-template-columns: 1fr;
-
-        gap: 28px;
-
-      }
-
-      .cta-inner {
-
-        align-items: flex-start;
-
-        flex-direction: column;
-
-      }
-
-      .footer-top {
-
-        flex-direction: column;
-
-      }
-
+      .nav { min-height: 65px; }
+      .logo { font-size: 25px; }
+      .nav-links { gap: 13px; font-size: 12px; }
+      .nav-links .nav-optional { display: none; }
+      .nav-links .button { min-height: 40px; padding: 8px 12px; font-size: 11px; }
+      .hero { padding: 55px 0 45px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 15px; }
+      .hero-art { min-height: 340px; padding: 15px; }
+      .invitation { max-width: 285px; min-height: 350px; }
+      .invitation-inner { min-height: 310px; }
+      .features, .template-grid { grid-template-columns: 1fr; }
+      .feature { padding: 22px; }
+      .template-preview { min-height: 250px; }
+      .section { padding: 60px 0; }
+      .section-heading { margin-bottom: 28px; }
+      .footer-inner { justify-content: center; text-align: center; }
     }
 
-    @media (max-width: 390px) {
-
-      .nav-links {
-
-        gap: 10px;
-
-        font-size: 10px;
-
-      }
-
-      .logo {
-
-        font-size: 20px;
-
-      }
-
-      h1 {
-
-        font-size: 33px;
-
-      }
-
-      .hero-buttons .button {
-
-        padding: 11px 13px;
-
-        font-size: 12px;
-
-      }
-
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition: none !important; }
     }
-
   </style>
-
 </head>
 
 <body>
-
   <header>
+    <div class="container nav">
+      <a class="logo" href="#beranda" aria-label="Ramaiin beranda">ramaiin.</a>
 
-    <nav class="container">
-
-      <a href="#beranda" class="logo">ramaiin.</a>
-
-      <div class="nav-links">
-
-        <a href="#beranda">Beranda</a>
-
-        <a href="#koleksi">Koleksi</a>
-
-        <a href="#cara-kerja">Cara Kerja</a>
-
-        <a href="#kontak" class="nav-contact">Kontak</a>
-
-        <a href="#kontak" class="button">Pesan Sekarang</a>
-
-      </div>
-
-    </nav>
-
+      <nav class="nav-links" aria-label="Navigasi utama">
+        <a class="nav-optional" href="#tentang">Tentang</a>
+        <a href="#koleksi">Template</a>
+        <a class="button" href="https://wa.me/6285248462992?text=Halo%20Ramaiin!%20Saya%20ingin%20membuat%20undangan%20digital.%20Boleh%20minta%20informasi%20template%20dan%20harganya%3F" target="_blank" rel="noopener noreferrer">Hubungi Kami ↗</a>
+      </nav>
+    </div>
   </header>
 
   <main>
+    <section class="hero" id="beranda">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Undangan Digital · Made with Heart</div>
+          <h1>Ceritakan hari<br>istimewamu <em>dengan indah.</em></h1>
+          <p class="hero-copy">
+            Setiap cerita cinta punya cara istimewa untuk dikenang.
+            Temukan undangan digital yang elegan, praktis, dan personal bersama Ramaiin.
+          </p>
 
-    <section class="hero container" id="beranda">
-
-      <div>
-
-        <p class="eyebrow">Undangan Digital Pernikahan</p>
-
-        <h1>Momen istimewa, dimulai dari sebuah undangan.</h1>
-
-        <p class="hero-copy">
-
-          Rayakan cerita cinta dengan undangan digital yang personal,
-
-          elegan, dan mudah dibagikan.
-
-        </p>
-
-        <div class="hero-buttons">
-
-          <a href="#koleksi" class="button">Jelajahi Undangan</a>
-
-          <a href="#cara-kerja" class="button button-outline">Lihat Cara Kerja</a>
-
+          <div class="hero-actions">
+            <a class="button" href="https://wa.me/6285248462992?text=Halo%20Ramaiin!%20Saya%20ingin%20membuat%20undangan%20digital.%20Boleh%20minta%20informasi%20template%20dan%20harganya%3F" target="_blank" rel="noopener noreferrer">
+              Mulai Buat Undangan ↗
+            </a>
+            <a class="button button-outline" href="#koleksi">Lihat Koleksi ↓</a>
+          </div>
         </div>
 
+        <div class="hero-art" aria-label="Contoh desain undangan pernikahan">
+          <div class="invitation">
+            <div class="invitation-inner">
+              <div class="small">The Wedding Of</div>
+              <div class="names">Nia<br><span class="amp">&</span><br>Zeed</div>
+              <div class="small">Together with our families</div>
+              <div class="date">SAVE THE DATE<br><br>YOUR SPECIAL DAY</div>
+            </div>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <div class="hero-visual">
-
-        <div class="invitation">
-
-          <img
-
-            src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=85"
-
-            alt="Suasana pernikahan yang elegan"
-
-          >
-
-          <div class="invitation-label">THE WEDDING OF</div>
-
-          <h2>Nia &amp; Zaid</h2>
-
-          <p>Sebuah awal dari cerita selamanya</p>
-
+    <section class="section" id="tentang">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">Why Ramaiin</div>
+          <h2>Istimewa dalam setiap <em>detail.</em></h2>
+          <p>Undangan yang bukan hanya menyampaikan kabar, tetapi juga menghadirkan kesan.</p>
         </div>
 
+        <div class="features">
+          <article class="feature">
+            <div class="feature-number">01</div>
+            <h3>Desain Elegan</h3>
+            <p>Tampilan bersih dan berkelas yang bisa disesuaikan dengan cerita kamu.</p>
+          </article>
+          <article class="feature">
+            <div class="feature-number">02</div>
+            <h3>Praktis Dibagikan</h3>
+            <p>Bagikan undangan digital kepada keluarga dan sahabat melalui tautan.</p>
+          </article>
+          <article class="feature">
+            <div class="feature-number">03</div>
+            <h3>Lebih Personal</h3>
+            <p>Informasikan detail hari bahagia dengan cara yang mudah diakses.</p>
+          </article>
+        </div>
       </div>
-
     </section>
 
     <section class="section collection" id="koleksi">
-
       <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">Our Collection</div>
+          <h2>Pilih cerita <em>favoritmu.</em></h2>
+          <p>Temukan inspirasi desain undangan yang sesuai dengan momen istimewamu.</p>
+        </div>
 
-        <p class="eyebrow">Koleksi Pilihan</p>
-
-        <h2 class="section-title">Temukan desain yang mewakili ceritamu.</h2>
-
-        <div class="cards">
-
-          <article class="card">
-
-            <img
-
-              src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80"
-
-              alt="Inspirasi pernikahan klasik"
-
-              loading="lazy"
-
-            >
-
-            <div class="card-content">
-
-              <p class="card-number">01 / KOLEKSI</p>
-
+        <div class="template-grid">
+          <article class="template-card">
+            <div class="template-preview">
+              <div class="mini-card">
+                <div class="mini-label">THE WEDDING OF</div>
+                <div class="mini-names">Nia<br><em>&</em><br>Zeed</div>
+                <div class="mini-date">A DAY TO REMEMBER</div>
+              </div>
+            </div>
+            <div class="template-info">
               <h3>Classic Romance</h3>
-
-              <a class="card-link" href="#kontak">
-
-                Lihat Detail <span>↗</span>
-
-              </a>
-
+              <p>Ivory hangat, tipografi klasik, dan detail romantis.</p>
+              <a class="button" href="https://wa.me/6285248462992?text=Halo%20Ramaiin!%20Saya%20tertarik%20dengan%20template%20Classic%20Romance.%20Boleh%20minta%20detail%20dan%20harganya%3F" target="_blank" rel="noopener noreferrer">Pilih Template ↗</a>
             </div>
-
           </article>
 
-          <article class="card">
-
-            <img
-
-              src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800&q=80"
-
-              alt="Inspirasi undangan modern"
-
-              loading="lazy"
-
-            >
-
-            <div class="card-content">
-
-              <p class="card-number">02 / KOLEKSI</p>
-
-              <h3>Modern Minimal</h3>
-
-              <a class="card-link" href="#kontak">
-
-                Lihat Detail <span>↗</span>
-
-              </a>
-
+          <article class="template-card">
+            <div class="template-preview sage">
+              <div class="mini-card">
+                <div class="mini-label">A BEAUTIFUL BEGINNING</div>
+                <div class="mini-names">The<br>Beginning</div>
+                <div class="mini-date">MADE WITH LOVE</div>
+              </div>
             </div>
-
+            <div class="template-info">
+              <h3>Sage Serenity</h3>
+              <p>Nuansa hijau lembut dengan gaya natural modern.</p>
+              <a class="button" href="https://wa.me/6285248462992?text=Halo%20Ramaiin!%20Saya%20tertarik%20dengan%20template%20Sage%20Serenity.%20Boleh%20minta%20detail%20dan%20harganya%3F" target="_blank" rel="noopener noreferrer">Pilih Template ↗</a>
+            </div>
           </article>
 
-          <article class="card">
-
-            <img
-
-              src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=800&q=80"
-
-              alt="Inspirasi perayaan pernikahan"
-
-              loading="lazy"
-
-            >
-
-            <div class="card-content">
-
-              <p class="card-number">03 / KOLEKSI</p>
-
-              <h3>Timeless Elegance</h3>
-
-              <a class="card-link" href="#kontak">
-
-                Lihat Detail <span>↗</span>
-
-              </a>
-
+          <article class="template-card">
+            <div class="template-preview rose">
+              <div class="mini-card">
+                <div class="mini-label">FOREVER STARTS HERE</div>
+                <div class="mini-names">A Love<br>Story</div>
+                <div class="mini-date">OUR SPECIAL DAY</div>
+              </div>
             </div>
-
+            <div class="template-info">
+              <h3>Soft Blush</h3>
+              <p>Warna blush yang lembut untuk suasana manis.</p>
+              <a class="button" href="https://wa.me/6285248462992?text=Halo%20Ramaiin!%20Saya%20tertarik%20dengan%20template%20Soft%20Blush.%20Boleh%20minta%20detail%20dan%20harganya%3F" target="_blank" rel="noopener noreferrer">Pilih Template ↗</a>
+            </div>
           </article>
-
         </div>
-
       </div>
-
-    </section>
-
-    <section class="section" id="cara-kerja">
-
-      <div class="container">
-
-        <p class="eyebrow">Sederhana dari Awal</p>
-
-        <h2 class="section-title">Cara kerja</h2>
-
-        <div class="steps">
-
-          <article class="step">
-
-            <div class="step-icon">▧</div>
-
-            <p class="step-number">01</p>
-
-            <h3>Pilih Desain</h3>
-
-            <p>Temukan tampilan undangan yang paling sesuai dengan suasana perayaanmu.</p>
-
-          </article>
-
-          <article class="step">
-
-            <div class="step-icon">✎</div>
-
-            <p class="step-number">02</p>
-
-            <h3>Sesuaikan Detail</h3>
-
-            <p>Lengkapi nama, waktu, dan informasi acara agar terasa lebih personal.</p>
-
-          </article>
-
-          <article class="step">
-
-            <div class="step-icon">➤</div>
-
-            <p class="step-number">03</p>
-
-            <h3>Bagikan Undangan</h3>
-
-            <p>Bagikan undangan digitalmu kepada orang-orang yang ingin kamu hadirkan.</p>
-
-          </article>
-
-        </div>
-
-      </div>
-
     </section>
 
     <section class="cta" id="kontak">
-
-      <div class="container cta-inner">
-
-        <h2>Satu momen, satu cerita, satu undangan istimewa.</h2>
-
-        <a class="button" href="https://wa.me/" target="_blank" rel="noopener">
-
-          Mulai Buat Undangan
-
-        </a>
-
+      <div class="container">
+        <div class="eyebrow">Your Story, Your Way</div>
+        <h2>Mari mulai cerita <em>indahmu.</em></h2>
+        <p>Ceritakan kebutuhan undanganmu kepada kami. Kami siap membantu kamu menemukan desain yang tepat.</p>
+        <a class="button" href="https://wa.me/6285248462992?text=Halo%20Ramaiin!%20Saya%20ingin%20membuat%20undangan%20digital.%20Boleh%20minta%20informasi%20template%20dan%20harganya%3F" target="_blank" rel="noopener noreferrer">Konsultasi via WhatsApp ↗</a>
       </div>
-
     </section>
-
   </main>
 
   <footer>
-
-    <div class="container">
-
-      <div class="footer-top">
-
-        <div>
-
-          <a href="#beranda" class="logo">ramaiin.</a>
-
-          <p class="footer-tagline">Merayakan momen, menyimpan kenangan.</p>
-
-        </div>
-
-        <div class="footer-links">
-
-          <a href="#beranda">Beranda</a>
-
-          <a href="#koleksi">Koleksi</a>
-
-          <a href="#cara-kerja">Cara Kerja</a>
-
-          <a href="#kontak">Kontak</a>
-
-        </div>
-
+    <div class="container footer-inner">
+      <div>
+        <a class="logo" href="#beranda">ramaiin.</a>
+        <div class="footer-note">Merayakan cerita, mengabadikan momen.</div>
       </div>
-
-      <div class="footer-bottom">
-
-        <a href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a>
-
-        <a href="https://wa.me/" target="_blank" rel="noopener">WhatsApp</a>
-
+      <div class="social-links">
+        <a href="https://www.instagram.com/ramaiin.vitation/" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+        <a href="https://wa.me/6285248462992?text=Halo%20Ramaiin!%20Saya%20ingin%20membuat%20undangan%20digital.%20Boleh%20minta%20informasi%20template%20dan%20harganya%3F" target="_blank" rel="noopener noreferrer">WhatsApp ↗</a>
       </div>
-
+      <div class="footer-note">© <span id="year"></span> Ramaiin. All rights reserved.</div>
     </div>
-
   </footer>
 
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
-
 </html>
