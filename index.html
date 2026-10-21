@@ -8,133 +8,691 @@
 
   <meta charset="UTF-8">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Ramaiin | Undangan Digital</title>
+  <meta name="theme-color" content="#f8f5ef">
+
+  <meta name="description" content="Ramaiin — undangan digital pernikahan yang elegan, personal, dan mudah dibagikan.">
+
+  <title>Ramaiin. | Undangan Digital</title>
 
   <style>
 
-    * { box-sizing: border-box; }
+    :root {
 
-    body {
+      --ivory: #f8f5ef;
+
+      --beige: #dccdbb;
+
+      --soft: #eee8df;
+
+      --taupe: #8b7965;
+
+      --ink: #292820;
+
+      --line: #ded7ce;
+
+      --white: #fffdfa;
+
+    }
+
+    * {
+
+      box-sizing: border-box;
 
       margin: 0;
 
-      font-family: Arial, sans-serif;
+      padding: 0;
 
-      color: #292820;
+    }
 
-      background: #faf8f4;
+    html {
+
+      scroll-behavior: smooth;
+
+      scroll-padding-top: 80px;
+
+    }
+
+    body {
+
+      background: var(--ivory);
+
+      color: var(--ink);
+
+      font-family: Arial, Helvetica, sans-serif;
 
       line-height: 1.7;
 
     }
 
-    header {
+    a {
 
-      padding: 22px 7%;
-
-      display: flex;
-
-      justify-content: space-between;
-
-      align-items: center;
-
-    }
-
-    .logo { font-size: 26px; font-weight: bold; }
-
-    .logo span { color: #a47b52; }
-
-    header a { color: #292820; text-decoration: none; }
-
-    .hero {
-
-      text-align: center;
-
-      padding: 85px 20px;
-
-      background: #eee6d9;
-
-    }
-
-    .hero small { letter-spacing: 3px; color: #8a6848; }
-
-    h1 {
-
-      font: 48px/1.2 Georgia, serif;
-
-      max-width: 700px;
-
-      margin: 24px auto;
-
-    }
-
-    .hero p { max-width: 480px; margin: 0 auto 28px; }
-
-    .btn {
-
-      display: inline-block;
-
-      padding: 12px 23px;
-
-      color: white;
-
-      background: #292820;
+      color: inherit;
 
       text-decoration: none;
 
-      border-radius: 4px;
+    }
+
+    button, a {
+
+      -webkit-tap-highlight-color: transparent;
 
     }
 
-    section { padding: 55px 7%; }
+    .container {
 
-    .heading { text-align: center; margin-bottom: 30px; }
-
-    h2 { font: 34px Georgia, serif; }
-
-    .cards {
-
-      display: grid;
-
-      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-
-      gap: 18px;
-
-      max-width: 1000px;
+      width: min(1120px, 86%);
 
       margin: auto;
 
     }
 
-    .card {
+    header {
 
-      background: white;
+      background: var(--beige);
 
-      padding: 25px;
-
-      border: 1px solid #e8e1d6;
-
-      border-radius: 8px;
+      border-bottom: 1px solid rgba(41,40,32,.08);
 
     }
 
-    .card h3 { font: 24px Georgia, serif; }
+    nav {
 
-    .price { font-weight: bold; font-size: 22px; }
+      min-height: 66px;
 
-    .card p { color: #70695f; }
+      display: flex;
 
-    .contact { text-align: center; background: #eee6d9; }
+      align-items: center;
 
-    footer { text-align: center; padding: 25px; color: #777064; }
+      justify-content: space-between;
 
-    @media(max-width: 500px) {
+      gap: 24px;
 
-      h1 { font-size: 38px; }
+    }
 
-      section { padding: 40px 5%; }
+    .logo {
+
+      font-family: Georgia, serif;
+
+      font-size: 23px;
+
+      letter-spacing: -1px;
+
+      font-weight: bold;
+
+    }
+
+    .nav-links {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 28px;
+
+      font-size: 13px;
+
+    }
+
+    .nav-links a:hover,
+
+    footer a:hover {
+
+      color: var(--taupe);
+
+    }
+
+    .button {
+
+      display: inline-block;
+
+      padding: 12px 20px;
+
+      background: var(--ink);
+
+      color: white;
+
+      border: 1px solid var(--ink);
+
+      font-size: 13px;
+
+      font-weight: bold;
+
+      transition: .2s ease;
+
+    }
+
+    .button:hover {
+
+      background: var(--taupe);
+
+      border-color: var(--taupe);
+
+    }
+
+    .button-outline {
+
+      background: transparent;
+
+      color: var(--ink);
+
+      border-color: var(--line);
+
+    }
+
+    .button-outline:hover {
+
+      color: white;
+
+    }
+
+    .hero {
+
+      display: grid;
+
+      grid-template-columns: 1.1fr .9fr;
+
+      align-items: center;
+
+      gap: 75px;
+
+      padding-top: 90px;
+
+      padding-bottom: 90px;
+
+    }
+
+    .eyebrow {
+
+      color: var(--taupe);
+
+      font-size: 11px;
+
+      font-weight: bold;
+
+      letter-spacing: 3px;
+
+      text-transform: uppercase;
+
+      margin-bottom: 18px;
+
+    }
+
+    h1, h2, h3 {
+
+      font-family: Georgia, "Times New Roman", serif;
+
+      font-weight: normal;
+
+      line-height: 1.25;
+
+    }
+
+    h1 {
+
+      font-size: clamp(34px, 4vw, 52px);
+
+      letter-spacing: -1.5px;
+
+      margin-bottom: 22px;
+
+    }
+
+    .hero-copy {
+
+      max-width: 470px;
+
+      font-size: 14px;
+
+      color: #625d54;
+
+      margin-bottom: 27px;
+
+    }
+
+    .hero-buttons {
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 10px;
+
+    }
+
+    .hero-visual {
+
+      position: relative;
+
+      max-width: 400px;
+
+      width: 100%;
+
+      justify-self: center;
+
+      padding: 22px;
+
+      background: var(--beige);
+
+    }
+
+    .invitation {
+
+      background: var(--ivory);
+
+      padding: 12px 12px 24px;
+
+      text-align: center;
+
+      box-shadow: 0 12px 30px rgba(41,40,32,.08);
+
+    }
+
+    .invitation img {
+
+      display: block;
+
+      width: 100%;
+
+      aspect-ratio: 3 / 3.5;
+
+      object-fit: cover;
+
+      object-position: center;
+
+      margin-bottom: 17px;
+
+    }
+
+    .invitation-label {
+
+      color: var(--taupe);
+
+      font-size: 10px;
+
+      letter-spacing: 4px;
+
+    }
+
+    .invitation h2 {
+
+      font-size: 24px;
+
+      margin-top: 7px;
+
+    }
+
+    .invitation p {
+
+      font-family: Georgia, serif;
+
+      font-size: 13px;
+
+      margin-top: 5px;
+
+    }
+
+    .section {
+
+      padding: 85px 0;
+
+    }
+
+    .collection {
+
+      background: var(--soft);
+
+    }
+
+    .section-title {
+
+      font-size: 31px;
+
+      margin-bottom: 35px;
+
+    }
+
+    .cards {
+
+      display: grid;
+
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+
+      gap: 22px;
+
+    }
+
+    .card {
+
+      background: var(--ivory);
+
+      border: 1px solid var(--line);
+
+      transition: transform .2s ease;
+
+    }
+
+    .card:hover {
+
+      transform: translateY(-4px);
+
+    }
+
+    .card img {
+
+      width: 100%;
+
+      display: block;
+
+      aspect-ratio: 4 / 3;
+
+      object-fit: cover;
+
+    }
+
+    .card-content {
+
+      padding: 20px;
+
+    }
+
+    .card-number {
+
+      font-size: 10px;
+
+      letter-spacing: 2px;
+
+      color: var(--taupe);
+
+      margin-bottom: 8px;
+
+    }
+
+    .card h3 {
+
+      font-size: 22px;
+
+      margin-bottom: 18px;
+
+    }
+
+    .card-link {
+
+      border-top: 1px solid var(--line);
+
+      padding-top: 14px;
+
+      font-size: 12px;
+
+      font-weight: bold;
+
+      display: flex;
+
+      justify-content: space-between;
+
+    }
+
+    .steps {
+
+      display: grid;
+
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+
+      gap: 40px;
+
+    }
+
+    .step {
+
+      border-top: 1px solid var(--line);
+
+      padding-top: 22px;
+
+    }
+
+    .step-icon {
+
+      color: var(--taupe);
+
+      font-size: 25px;
+
+      margin-bottom: 15px;
+
+    }
+
+    .step-number {
+
+      color: var(--taupe);
+
+      font-size: 11px;
+
+      letter-spacing: 2px;
+
+    }
+
+    .step h3 {
+
+      font-size: 22px;
+
+      margin: 7px 0;
+
+    }
+
+    .step p {
+
+      font-size: 13px;
+
+      color: #625d54;
+
+    }
+
+    .cta {
+
+      background: var(--beige);
+
+      padding: 48px 0;
+
+    }
+
+    .cta-inner {
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 25px;
+
+    }
+
+    .cta h2 {
+
+      font-size: 27px;
+
+    }
+
+    footer {
+
+      padding: 40px 0 25px;
+
+    }
+
+    .footer-top {
+
+      display: flex;
+
+      align-items: flex-start;
+
+      justify-content: space-between;
+
+      gap: 30px;
+
+      padding-bottom: 28px;
+
+    }
+
+    .footer-tagline {
+
+      margin-top: 10px;
+
+      font-size: 13px;
+
+    }
+
+    .footer-links {
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 22px;
+
+      font-size: 12px;
+
+    }
+
+    .footer-bottom {
+
+      border-top: 1px solid var(--line);
+
+      padding-top: 20px;
+
+      display: flex;
+
+      gap: 22px;
+
+      font-size: 12px;
+
+      text-decoration: underline;
+
+    }
+
+    @media (max-width: 760px) {
+
+      .container {
+
+        width: 90%;
+
+      }
+
+      nav {
+
+        min-height: 65px;
+
+      }
+
+      .nav-links {
+
+        gap: 14px;
+
+        font-size: 11px;
+
+      }
+
+      .nav-links .nav-contact {
+
+        display: none;
+
+      }
+
+      .hero {
+
+        grid-template-columns: 1fr;
+
+        gap: 42px;
+
+        padding-top: 65px;
+
+        padding-bottom: 65px;
+
+      }
+
+      h1 {
+
+        font-size: 38px;
+
+      }
+
+      .hero-visual {
+
+        max-width: 360px;
+
+      }
+
+      .section {
+
+        padding: 65px 0;
+
+      }
+
+      .cards {
+
+        grid-template-columns: 1fr;
+
+        gap: 22px;
+
+      }
+
+      .card img {
+
+        aspect-ratio: 16 / 9;
+
+      }
+
+      .steps {
+
+        grid-template-columns: 1fr;
+
+        gap: 28px;
+
+      }
+
+      .cta-inner {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+      }
+
+      .footer-top {
+
+        flex-direction: column;
+
+      }
+
+    }
+
+    @media (max-width: 390px) {
+
+      .nav-links {
+
+        gap: 10px;
+
+        font-size: 10px;
+
+      }
+
+      .logo {
+
+        font-size: 20px;
+
+      }
+
+      h1 {
+
+        font-size: 33px;
+
+      }
+
+      .hero-buttons .button {
+
+        padding: 11px 13px;
+
+        font-size: 12px;
+
+      }
 
     }
 
@@ -146,71 +704,73 @@
 
   <header>
 
-    <div class="logo">ramaiin<span>.</span></div>
+    <nav class="container">
 
-    <a href="#paket">Paket Undangan</a>
+      <a href="#beranda" class="logo">ramaiin.</a>
+
+      <div class="nav-links">
+
+        <a href="#beranda">Beranda</a>
+
+        <a href="#koleksi">Koleksi</a>
+
+        <a href="#cara-kerja">Cara Kerja</a>
+
+        <a href="#kontak" class="nav-contact">Kontak</a>
+
+        <a href="#kontak" class="button">Pesan Sekarang</a>
+
+      </div>
+
+    </nav>
 
   </header>
 
   <main>
 
-    <div class="hero">
+    <section class="hero container" id="beranda">
 
-      <small>YOUR MOMENT, BEAUTIFULLY INVITED</small>
+      <div>
 
-      <h1>Momen istimewa dimulai dari sebuah undangan.</h1>
+        <p class="eyebrow">Undangan Digital Pernikahan</p>
 
-      <p>Undangan digital simpel, elegan, dan personal untuk hari paling berkesan dalam hidupmu.</p>
+        <h1>Momen istimewa, dimulai dari sebuah undangan.</h1>
 
-      <a class="btn" href="#paket">Jelajahi Paket</a>
+        <p class="hero-copy">
 
-    </div>
+          Rayakan cerita cinta dengan undangan digital yang personal,
 
-    <section id="paket">
+          elegan, dan mudah dibagikan.
 
-      <div class="heading">
+        </p>
 
-        <h2>Pilih Undanganmu</h2>
+        <div class="hero-buttons">
 
-        <p>Dirancang untuk setiap cerita istimewa.</p>
+          <a href="#koleksi" class="button">Jelajahi Undangan</a>
+
+          <a href="#cara-kerja" class="button button-outline">Lihat Cara Kerja</a>
+
+        </div>
 
       </div>
 
-      <div class="cards">
+      <div class="hero-visual">
 
-        <div class="card">
+        <div class="invitation">
 
-          <h3>Pernikahan</h3>
+          <img
 
-          <p>Undangan digital romantis dengan detail acara dan lokasi.</p>
+            src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=85"
 
-          <div class="price">Mulai Rp99.000</div>
+            alt="Suasana pernikahan yang elegan"
 
-          <a class="btn" href="#pesan">Pilih Paket</a>
+          >
 
-        </div>
+          <div class="invitation-label">THE WEDDING OF</div>
 
-        <div class="card">
+          <h2>Nia &amp; Zaid</h2>
 
-          <h3>Akad & Resepsi</h3>
-
-          <p>Informasi acara yang praktis, rapi, dan mudah dibagikan.</p>
-
-          <div class="price">Mulai Rp129.000</div>
-
-          <a class="btn" href="#pesan">Pilih Paket</a>
-
-        </div>
-
-        <div class="card">
-
-          <h3>Acara Spesial</h3>
-
-          <p>Untuk ulang tahun, syukuran, dan momen berharga lainnya.</p>
-
-          <div class="price">Mulai Rp79.000</div>
-
-          <a class="btn" href="#pesan">Pilih Paket</a>
+          <p>Sebuah awal dari cerita selamanya</p>
 
         </div>
 
@@ -218,41 +778,215 @@
 
     </section>
 
-    <section>
+    <section class="section collection" id="koleksi">
 
-      <div class="heading">
+      <div class="container">
 
-        <h2>Bagaimana Cara Memesan?</h2>
+        <p class="eyebrow">Koleksi Pilihan</p>
 
-        <p>Mudah, praktis, dan tanpa ribet.</p>
+        <h2 class="section-title">Temukan desain yang mewakili ceritamu.</h2>
 
-      </div>
+        <div class="cards">
 
-      <div class="cards">
+          <article class="card">
 
-        <div class="card"><h3>01. Pilih Desain</h3><p>Pilih gaya undangan sesuai seleramu.</p></div>
+            <img
 
-        <div class="card"><h3>02. Kirim Data</h3><p>Siapkan nama dan detail acara.</p></div>
+              src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80"
 
-        <div class="card"><h3>03. Bagikan</h3><p>Bagikan tautan undangan kepada tamu.</p></div>
+              alt="Inspirasi pernikahan klasik"
+
+              loading="lazy"
+
+            >
+
+            <div class="card-content">
+
+              <p class="card-number">01 / KOLEKSI</p>
+
+              <h3>Classic Romance</h3>
+
+              <a class="card-link" href="#kontak">
+
+                Lihat Detail <span>↗</span>
+
+              </a>
+
+            </div>
+
+          </article>
+
+          <article class="card">
+
+            <img
+
+              src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800&q=80"
+
+              alt="Inspirasi undangan modern"
+
+              loading="lazy"
+
+            >
+
+            <div class="card-content">
+
+              <p class="card-number">02 / KOLEKSI</p>
+
+              <h3>Modern Minimal</h3>
+
+              <a class="card-link" href="#kontak">
+
+                Lihat Detail <span>↗</span>
+
+              </a>
+
+            </div>
+
+          </article>
+
+          <article class="card">
+
+            <img
+
+              src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=800&q=80"
+
+              alt="Inspirasi perayaan pernikahan"
+
+              loading="lazy"
+
+            >
+
+            <div class="card-content">
+
+              <p class="card-number">03 / KOLEKSI</p>
+
+              <h3>Timeless Elegance</h3>
+
+              <a class="card-link" href="#kontak">
+
+                Lihat Detail <span>↗</span>
+
+              </a>
+
+            </div>
+
+          </article>
+
+        </div>
 
       </div>
 
     </section>
 
-    <section class="contact" id="pesan">
+    <section class="section" id="cara-kerja">
 
-      <h2>Siap Membuat Undanganmu?</h2>
+      <div class="container">
 
-      <p>Hubungi Ramaiin untuk memulai pesanan.</p>
+        <p class="eyebrow">Sederhana dari Awal</p>
 
-      <a class="btn" href="https://wa.me/?text=Halo%20Ramaiin%2C%20saya%20ingin%20bertanya%20tentang%20undangan%20digital">Hubungi Kami</a>
+        <h2 class="section-title">Cara kerja</h2>
+
+        <div class="steps">
+
+          <article class="step">
+
+            <div class="step-icon">▧</div>
+
+            <p class="step-number">01</p>
+
+            <h3>Pilih Desain</h3>
+
+            <p>Temukan tampilan undangan yang paling sesuai dengan suasana perayaanmu.</p>
+
+          </article>
+
+          <article class="step">
+
+            <div class="step-icon">✎</div>
+
+            <p class="step-number">02</p>
+
+            <h3>Sesuaikan Detail</h3>
+
+            <p>Lengkapi nama, waktu, dan informasi acara agar terasa lebih personal.</p>
+
+          </article>
+
+          <article class="step">
+
+            <div class="step-icon">➤</div>
+
+            <p class="step-number">03</p>
+
+            <h3>Bagikan Undangan</h3>
+
+            <p>Bagikan undangan digitalmu kepada orang-orang yang ingin kamu hadirkan.</p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="cta" id="kontak">
+
+      <div class="container cta-inner">
+
+        <h2>Satu momen, satu cerita, satu undangan istimewa.</h2>
+
+        <a class="button" href="https://wa.me/" target="_blank" rel="noopener">
+
+          Mulai Buat Undangan
+
+        </a>
+
+      </div>
 
     </section>
 
   </main>
 
-  <footer>© 2026 Ramaiin. Untuk momen yang berarti.</footer>
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-top">
+
+        <div>
+
+          <a href="#beranda" class="logo">ramaiin.</a>
+
+          <p class="footer-tagline">Merayakan momen, menyimpan kenangan.</p>
+
+        </div>
+
+        <div class="footer-links">
+
+          <a href="#beranda">Beranda</a>
+
+          <a href="#koleksi">Koleksi</a>
+
+          <a href="#cara-kerja">Cara Kerja</a>
+
+          <a href="#kontak">Kontak</a>
+
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+
+        <a href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a>
+
+        <a href="https://wa.me/" target="_blank" rel="noopener">WhatsApp</a>
+
+      </div>
+
+    </div>
+
+  </footer>
 
 </body>
 
